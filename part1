@@ -1,0 +1,69 @@
+import time
+from random import shuffle
+print(40*"-","WELCOME",40*"-")
+time.sleep(0.5)
+k=input("Please enter your name : ".upper())
+
+print("\n")
+print(f" Hello ,\n{k} let's play :\n")
+
+print("In this game you have to guess a word")
+print("\n")
+n=6
+print("you have six chances to get the right word\n\n")
+list1=['six','mix','fix',]
+shuffle(list1)
+list2=['note','sink','pink','kink']
+shuffle(list2)
+
+p=int(input("\n\nenter your choice for number of letters 4 or 3"))
+
+if(p==3):
+    l=list1[1]
+    print("***")
+    q=["*","*","*"]
+    print("\n\n clue.......word is in the  list")
+    print(list1)
+
+if(p==4):
+    l=list2[1]
+
+    print("****")
+    q=["*","*","*","*"]
+    print("\n\n clue.......word is in the  list")
+    print(list2)
+y=1
+while(y==1):
+    while(n>0):
+        print(f"\n\n{n} turns left")
+        z = input("\nenter the alphabet : ")
+        for i in range(p):
+            if(l[i]==z):
+                q[i]=z
+                print("".join(q))
+                break
+
+        n=n-1
+
+    if("".join(q) == l):
+        print("You won")
+        break
+
+
+else:
+    print("\nYou Loose\n\n try again")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
